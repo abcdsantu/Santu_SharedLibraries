@@ -1,4 +1,4 @@
-def gg() {
+def call() {
     timeout(time: 3, unit: 'MINUTES') {
         echo "Initializing quality gates..."
         sh 'sleep 10' //small delay because project quality can still being published on previous stage (specially on bigger projects).  
