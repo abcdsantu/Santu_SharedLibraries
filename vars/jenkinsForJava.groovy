@@ -3,7 +3,7 @@ def call(String repoUrl) {
        agent any
        tools {
            maven 'maven1'
-           jdk 'java'
+           jdk 'openjdk 17.0.4.1'
            
        }
        stages {
