@@ -1,2 +1,2 @@
-def withSonarQubeEnv("sonar") {
+def withSonarQubeEnv() {
    sh "mvn sonar:sonar"
