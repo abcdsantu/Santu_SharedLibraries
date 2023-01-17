@@ -1,3 +1,7 @@
-def withSonarQubeEnv() {
-   sh "mvn sonar:sonar"
+
+
+def call() {
+   withSonarQubeEnv("sonar") 
+          sh "mvn sonar:sonar"
 }
+
