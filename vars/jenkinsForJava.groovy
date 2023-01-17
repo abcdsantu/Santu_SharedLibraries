@@ -2,7 +2,7 @@ def call(String repoUrl) {
   pipeline {
        agent any
        tools {
-           maven 'Maven1 3.8.7'
+           maven1 'Maven 3.8.7'
            
        }
        stages {
@@ -14,8 +14,8 @@ def call(String repoUrl) {
            }
            stage("Checkout Code") {
                steps {
-                   git branch: 'master',
-                       url: "${gitrepoUrl}"
+                   git branch: 'main',
+                       url: "${repoUrl}"
                }
            }
            stage("Cleaning workspace") {
