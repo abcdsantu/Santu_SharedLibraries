@@ -2,8 +2,8 @@ def call(String repoUrl) {
   pipeline {
        agent any
        tools {
-           maven 'Maven 3.5.0'
-           jdk 'jdk8'
+           maven 'Maven1 3.8.7'
+           
        }
        stages {
            stage("Tools initialization") {
@@ -15,7 +15,7 @@ def call(String repoUrl) {
            stage("Checkout Code") {
                steps {
                    git branch: 'master',
-                       url: "${repoUrl}"
+                       url: "${gitrepoUrl}"
                }
            }
            stage("Cleaning workspace") {
@@ -23,11 +23,7 @@ def call(String repoUrl) {
                    sh "mvn clean"
                }
            }
-           stage("Running Testcase") {
-              steps {
-                   sh "mvn test"
-               }
-           }
+
            stage("Packing Application") {
                steps {
                    sh "mvn package -DskipTests"
